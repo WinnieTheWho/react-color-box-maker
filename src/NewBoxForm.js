@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class NewBoxForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { width:"", height:"", backgroundColor: "" };
+    this.state = { width:"", height:"", backgroundColor: "", key:"" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,7 +18,7 @@ class NewBoxForm extends Component {
     evt.preventDefault();
     this.props.addBox(this.state);
     this.setState({
-      width:"", height:"", backgroundColor: ""
+      width:"", height:"", backgroundColor: "", key:""
     });
   }
 
@@ -26,19 +26,19 @@ class NewBoxForm extends Component {
     return ( 
       <form onSubmit={this.handleSubmit}>
 
-        <label htmlfor="backgroundColor">Background Color: </label>
+        <label htmlFor="backgroundColor">Background Color: </label>
         <input id="backgroundColor" 
           name="backgroundColor"
-          value={this.state.backgroundColor} 
+          value={this.state.color} 
           onChange={this.handleChange}/>
         
-        <label htmlfor="width">Width of box: </label>
+        <label htmlFor="width">Width of box: </label>
         <input id="width" 
           name="width"
           value={this.state.width} 
           onChange={this.handleChange}/>
         
-        <label htmlfor="height">Height of box: </label>
+        <label htmlFor="height">Height of box: </label>
         <input id="height" 
           name="height"
           value={this.state.height} 
