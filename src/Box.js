@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Box extends Component {
   render() {
-    console.log("THE ID ISSSS:",this.props)
     return (
       <div className="box"
       style={{
